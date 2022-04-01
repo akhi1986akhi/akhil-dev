@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D image slider</title>
+    <style>
+        *{
+            margin:0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #000;
+        }
+        .box{
+            position: relative;
+            width:200px;
+            height:200px;
+            transform-style: preserve-3d;
+            animation: animate 20s linear infinite;
+            color:white;
+            font-size: 3em;
+        }
+        .box h1{
+
+        }
+        @keyframes animate{
+            0%{
+                transform: perspective(1000px) rotateY(0deg);
+            }
+            0%{
+                transform: perspective(1000px) rotateY(360deg);
+            }
+        }
+        .box span{
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            transform-origin: center;
+            transform-style: preserve-3d;
+            transform: rotateY(calc(var(--i) * 45deg)) translateZ(300px);
+            
+        }
+        .box span img{
+            width:200px;
+            height:200px;
+            position: absolute;
+            top:0;
+            left:0;
+            object-fit: cover;
+            -webkit-box-reflect: below 5px linear-gradient(transparent, transparent,#0004);
+            /* -webkit-box-reflect: below 10px linear-gradient( #000, #fff); */
+
+
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>BOX 3D</h1>
+        <span style="--i:1;"><img src="img/image01.jpg"></span>
+        <span style="--i:2;"><img src="img/image02.webp"></span>
+        <span style="--i:3;"><img src="img/image03.jpg"></span>
+        <span style="--i:4;"><img src="img/image04.jpg"></span>
+        <span style="--i:5;"><img src="img/images06.jpg"></span>
+        <span style="--i:6;"><img src="img/photo-1546587348-d12660c30c50.jpg"></span>
+        <span style="--i:7;"><img src="img/image07.jpg"></span>
+        <span style="--i:8;"><img src="img/image08.jpg"></span>
+    </div>
+</body>
+</html>
