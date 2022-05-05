@@ -232,6 +232,22 @@ ul li:nth-child(5):hover ~ #marker:before{
     color: #5da6ff;
     line-height: 10px;
 }
+.home span button{
+    padding:8px 10px;
+    background: none;
+    outline:none;
+    color:#03a9f5;
+    letter-spacing: 2px;
+    border-radius: 20px;
+    border: solid 1px #03a8f53c;
+    cursor: pointer;
+    margin-top:30px;
+    box-shadow: inset 5px 5px 10px rgba(0, 0, 0, 0.145), inset 5px 5px 5px rgba(110, 226, 241, 0.145);
+}
+.home span button a{
+    text-decoration: none;
+    color:#03a9f5;
+}
 #name{
     display: inline-block;
     font-size: 28px;

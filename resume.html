@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css"
+        integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        body {
+            background: lightblue;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            position: relative;
+            width: 100%;
+            max-width: 1000px;
+            min-height: 1000px;
+            background: #fff;
+            margin: 50px;
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            box-shadow: 0 35px 55px rgba(0, 0, 0, 0.3);
+        }
+
+        .container .left-side {
+            position: relative;
+            background: #003147;
+            padding: 40px;
+        }
+
+        .profile-text {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .profile-text .imgBx {
+            position: relative;
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            overflow: hidden;
+
+        }
+
+        .profile-text .imgBx img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .profile-text h2 {
+            color: #fff;
+            font-size: 1.5em;
+            margin-top: 20px;
+            text-transform: uppercase;
+            text-align: center;
+            font-weight: 600px;
+            line-height: 1.4em;
+        }
+
+        .profile-text h2 span {
+            font-size: 0.8em;
+            font-weight: 300px;
+        }
+
+        .contact-info {
+            padding-top: 40px;
+        }
+
+        .title {
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .contact-info ul li {
+            position: relative;
+            list-style: none;
+            margin: 10px 0;
+            cursor: pointer;
+        }
+
+        .contact-info ul li .icon {
+            display: inline-block;
+            width: 30px;
+            font-size: 18px;
+            color: #03a9f4;
+        }
+
+        .contact-info ul li .text {
+            display: inline-block;
+
+            color: #fcfdfd;
+        }
+
+        .contact-info.education li {
+            margin-bottom: 15px;
+
+        }
+
+        .contact-info.education h5 {
+            color: #03a9f4;
+            font-weight: 500;
+
+        }
+
+        .contact-info.education h4 {
+            color: #fafbfc;
+            font-weight: 500;
+
+        }
+
+        .contact-info.language .percent {
+            position: relative;
+            width: 100%;
+            height: 6px;
+            background: #081921;
+            display: block;
+            margin-top: 5px;
+
+        }
+
+        .contact-info.language .percent div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: #03a9f4;
+
+        }
+
+        .container .right-side {
+            position: relative;
+            background: #fff;
+            padding: 40px;
+        }
+
+        .about {
+            margin-bottom: 50px;
+        }
+
+        .about:last-child() {
+            margin-bottom: 0px;
+        }
+
+        .title2 {
+            color: #003147;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+        }
+
+        p {
+            color: #333;
+        }
+
+        .about .box {
+            display: flex;
+            flex-direction: row;
+            margin: 20px 0px;
+        }
+
+        .about .box .year-company {
+            min-width: 150px;
+        }
+
+        .about .box .year-company h5 {
+            text-transform: uppercase;
+            color: #848c90;
+            font-weight: 600;
+        }
+
+        .about .box .text h4 {
+            text-transform: uppercase;
+            color: #2a7da2;
+            font-size: 16px;
+        }
+
+        .skills .box {
+            position: relative;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            align-items: center;
+            justify-content: center;
+
+        }
+
+        .skills .box h4 {
+            text-transform: uppercase;
+            color: #848c99;
+            font-weight: 500;
+            
+        }
+
+        .skills .box .percent {
+            position: relative;
+            width: 100%;
+            height: 10px;
+            background: #f0f0f0;
+        }
+
+        .skills .box .percent div {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            background: #03a9f4;
+        }
+        .interest ul{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+
+        }
+        .interest ul li{
+            list-style: none;
+            color:#333;
+            font-weight: 500;
+            margin:10px 0px;
+        }
+        .interest ul li .fa{
+            color:#03a9f4;
+            font-size:18px;
+            width:20px;
+        }
+        @media (max-width:1000px){
+            .container{
+                margin:10px;
+                grid-template-columns: repeat(1,1fr);
+            }
+            .interest ul{
+                grid-template-columns: repeat(2,1fr);
+            }
+
+        }
+        @media (max-width:600px){
+                .about .box{
+                    flex-direction: column;
+                }
+                .about .box .year-company{
+
+                    margin-bottom: 5px;
+                }
+                .interest ul{
+                    grid-template-columns: repeat(1, 1fr);
+                }
+                .skills .box{
+                    grid-template-columns: repeat(1, 1fr);
+                }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="left-side">
+            <div class="profile-text">
+                <div class="imgBx">
+                    <img src="/img/dj.png">
+                </div>
+                <h2>Akhilesh Kumar<br><span>Web Developer</span></h2>
+            </div>
+            <div class="contact-info">
+                <h3 class="title">Contact Info</h3>
+                <ul>
+                    <li>
+                        <span class="icon"><i class="fa fa-phone" aria-hidden="true"></i></span>
+                        <span class="text">+91 7007761116</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-envelope" aria-hidden="true"></i>
+                        </span>
+                        <span class="text">akhi1986@hotmail.com</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-globe" aria-hidden="true"></i>
+                        </span>
+                        <span class="text">www.mywebsite.com</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-linkedin" aria-hidden="true"></i></span>
+                        <span class="text">www.linkedin.com</span>
+                    </li>
+                    <li>
+                        <span class="icon"><i class="fa fa-map-marker" aria-hidden="true"></i>
+                        </span>
+                        <span class="text">Gurugram, Haryana- 122001</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="contact-info education">
+                <h3 class="title">Education</h3>
+                <ul>
+                    <li>
+                        <h5>2019-2021</h5>
+                        <h4>Master in Bussiness Administration</h4>
+                        <h4>Swami Vivekanand University</h4>
+                    </li>
+                    <li>
+                        <h5>2012-2014</h5>
+                        <h4>Master's in Computer Application</h4>
+                        <h4>Swami Vivekanand University</h4>
+                    </li>
+                    <li>
+                        <h5>2007-2010</h5>
+                        <h4>Bachelor's in Computer Application</h4>
+                        <h4>IGNOU</h4>
+                    </li>
+                    <li>
+                        <h5>2005</h5>
+                        <h4>Intermediate</h4>
+                        <h4>UP BOARD</h4>
+                    </li>
+                    <li>
+                        <h5>2003</h5>
+                        <h4>Matriculation</h4>
+                        <h4>UP BOARD</h4>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="contact-info language">
+                <h3 class="title">Languages</h3>
+                <ul>
+                    <li>
+                        <span class="text">English</span>
+                        <span class="percent">
+                            <div style="width:70%;"></div>
+                        </span>
+                    </li>
+                    <li>
+                        <span class="text">Hindi</span>
+                        <span class="percent">
+                            <div style="width:90%;"></div>
+                        </span>
+                    </li>
+                </ul>
+
+            </div>
+        </div>
+        <div class="right-side">
+            <div class="about">
+                <h2 class="title2">Profile</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatem labore architecto excepturi?
+                    Harum, facere hic optio modi explicabo aliquid consequuntur et quisquam voluptate est cum quos,
+                    deleniti esse assumenda itaque.</p>
+            </div>
+            <div class="about">
+                <h2 class="title2">Experience</h2>
+                <div class="box">
+                    <div class="year-company">
+                        <h5>2019-present</h5>
+                        <h5>Company Name</h5>
+                    </div>
+                    <div class="text">
+                        <h4>Web Developer</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, ipsa.</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="year-company">
+                        <h5>2019-present</h5>
+                        <h5>Company Name</h5>
+                    </div>
+                    <div class="text">
+                        <h4>Web Developer</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, ipsa.</p>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="year-company">
+                        <h5>2019-present</h5>
+                        <h5>Company Name</h5>
+                    </div>
+                    <div class="text">
+                        <h4>Web Developer</h4>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore, ipsa.</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="about skills">
+                <h2 class="title2">Professional Skills</h2>
+                <h3 class="title2">Frontend</h3>
+                <div class="box">
+                    <h4>Html</h4>
+
+                    <div class="percent">
+                        <div style="width:90%"></div>
+
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Css</h4>
+                    <div class="percent">
+                        <div style="width:85%"></div>
+
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Java Script</h4>
+                    <div class="percent">
+                        <div style="width:80%"></div>
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Jquery</h4>
+                    <div class="percent">
+                        <div style="width:79%"></div>
+
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Bootstrap</h4>
+                    <div class="percent">
+                        <div style="width:70%"></div>
+
+                    </div>
+                </div>
+
+                <h3 class="title2">Backend</h3>
+                <div class="box">
+                    <h4>Python</h4>
+
+                    <div class="percent">
+                        <div style="width:90%"></div>
+
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>mysql</h4>
+                    <div class="percent">
+                        <div style="width:77%"></div>
+
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Mongodb - Atlas</h4>
+                    <div class="percent">
+                        <div style="width:70%"></div>
+
+                    </div>
+                </div>
+                
+                <h3 class="title2">Framework</h3>
+                <div class="box">
+                    <h4>NodeJs</h4>
+
+                    <div class="percent">
+                        <div style="width:75%"></div>
+
+                    </div>
+                </div>
+                <div class="box">
+                    <h4>Django</h4>
+                    <div class="percent">
+                        <div style="width:80%"></div>
+
+                    </div>
+                </div>
+                
+            </div>
+            <div class="about interest">
+                <h2 class="title2">Interest</h2>
+                <ul>
+                    <li>
+                        <i class="fa fa-gamepad" aria-hidden="true"></i>
+                        Gamming
+                    </li>
+                    <li>
+                        <i class="fa fa-gamepad" aria-hidden="true"></i>
+                        Gamming
+                    </li>
+                    <li>
+                        <i class="fa fa-gamepad" aria-hidden="true"></i>
+                        Gamming
+                    </li>
+                    <li>
+                        <i class="fa fa-gamepad" aria-hidden="true"></i>
+                        Gamming
+                    </li>
+                </ul>
+
+            </div>
+
+
+        </div>
+    </div>
+    
+
+</body>
+
+
+</html>
